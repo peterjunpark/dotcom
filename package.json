@@ -15,6 +15,8 @@
     "@astrojs/mdx": "^5.0.2",
     "@astrojs/rss": "^4.0.17",
     "@astrojs/sitemap": "^3.7.1",
+    "@webtui/css": "^0.1.6",
+    "@webtui/plugin-nf": "^0.1.1",
     "astro": "^6.0.8",
     "sharp": "^0.34.3"
   }
