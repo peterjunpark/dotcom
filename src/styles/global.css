@@ -3,9 +3,8 @@
 @import "@webtui/plugin-nf";
 
 @layer base {
-  :root {
-    --font-family:
-      var(--font-ubuntu-mono), monospace;
-    --font-size: 20px;
-  }
+	:root {
+		--font-family: var(--font-ubuntu-mono), monospace;
+		--font-size: 20px;
+	}
 }

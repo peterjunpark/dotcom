@@ -1,23 +1,28 @@
 {
-  "name": "",
-  "type": "module",
-  "version": "0.0.1",
-  "engines": {
-    "node": ">=22.12.0"
-  },
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/mdx": "^5.0.2",
-    "@astrojs/rss": "^4.0.17",
-    "@astrojs/sitemap": "^3.7.1",
-    "@webtui/css": "^0.1.6",
-    "@webtui/plugin-nf": "^0.1.1",
-    "astro": "^6.0.8",
-    "sharp": "^0.34.3"
-  }
+	"name": "",
+	"type": "module",
+	"version": "0.0.1",
+	"engines": {
+		"node": ">=22.12.0"
+	},
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"fmt": "biome format --write",
+		"check": "biome check"
+	},
+	"dependencies": {
+		"@astrojs/mdx": "^5.0.2",
+		"@astrojs/rss": "^4.0.17",
+		"@astrojs/sitemap": "^3.7.1",
+		"@webtui/css": "^0.1.6",
+		"@webtui/plugin-nf": "^0.1.1",
+		"astro": "^6.0.8",
+		"sharp": "^0.34.3"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.4.8"
+	}
 }

@@ -6,11 +6,13 @@ import { defineConfig, fontProviders } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://example.com",
-  integrations: [mdx(), sitemap()],
-  fonts: [{
-    provider: fontProviders.fontsource(),
-    name: "Ubuntu Mono",
-    cssVariable: "--font-ubuntu-mono",
-  }],
+	site: "https://example.com",
+	integrations: [mdx(), sitemap()],
+	fonts: [
+		{
+			provider: fontProviders.fontsource(),
+			name: "Ubuntu Mono",
+			cssVariable: "--font-ubuntu-mono",
+		},
+	],
 });
