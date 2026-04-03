@@ -1,10 +1,120 @@
+@layer base, utils, components;
+
 @import "@webtui/css/base.css";
 @import "@webtui/css/components/typography.css";
 @import "@webtui/plugin-nf";
 
 @layer base {
 	:root {
-		--font-family: var(--font-ubuntu-mono), monospace;
-		--font-size: 20px;
+		--nvim-dark-blue: #004c73;
+		--nvim-dark-cyan: #007373;
+		--nvim-dark-green: #005523;
+		--nvim-dark-grey1: #07080d;
+		--nvim-dark-grey2: #14161b;
+		--nvim-dark-grey3: #2c2e33;
+		--nvim-dark-grey4: #4f5258;
+		--nvim-dark-magenta: #470045;
+		--nvim-dark-red: #590008;
+		--nvim-dark-yellow: #6b5300;
+		--nvim-light-blue: #a6dbff;
+		--nvim-light-cyan: #8cf8f7;
+		--nvim-light-green: #b3f6c0;
+		--nvim-light-grey1: #eef1f8;
+		--nvim-light-grey2: #e0e2ea;
+		--nvim-light-grey3: #c4c6cd;
+		--nvim-light-grey4: #9b9ea4;
+		--nvim-light-magenta: #ffcaff;
+		--nvim-light-red: #ffc0b9;
+		--nvim-light-yellow: #fce094;
+		--font-family: var(--font-ubuntu-mono), monospace, "Symbols Nerd Font";
+		--font-size: 16pt;
+		a::before {
+			content: "[";
+		}
+		a::after {
+			content: "]";
+		}
+		main a:hover::after {
+			content: "](" attr(href) ")";
+		}
+		main h1::before {
+			content: "# ";
+		}
+		main h2::before {
+			content: "## ";
+		}
+		main h3::before {
+			content: "### ";
+		}
+		main h4::before {
+			content: "#### ";
+		}
+		main h5::before {
+			content: "##### ";
+		}
+		main h6::before {
+			content: "###### ";
+		}
+		main :is(h1, h2, h3, h4, h5, h6, p, ul) {
+			padding-top: 1lh;
+		}
+	}
+
+	:root,
+	[data-lights="off"] {
+		--comment-fg: var(--nvim-light-grey4);
+		--normal-bg: var(--nvim-dark-grey2);
+		--normal-fg: var(--nvim-light-grey2);
+		--normalfloat-bg: var(--nvim-dark-grey1);
+		--special-fg: var(--nvim-light-cyan);
+		--statusline-bg: var(--nvim-dark-grey4);
+		--tabline-bg: var(--nvim-dark-grey3);
+		--tabline-fg: var(--nvim-light-grey3);
+		--visual-bg: var(--nvim-dark-grey4);
+		/* webtui */
+		--background0: var(--normal-bg);
+		--background1: var(--normalfloat-bg);
+		--background2: var(--statusline-bg);
+		--background3: red;
+		--foreground0: var(--normal-fg);
+		--foreground1: var(--normal-fg);
+		--foreground2: var(--normal-fg);
+		--box-border-color: var(--normal-fg);
+		/* --table-border-color: */
+		/* --separator-border-color: */
+	}
+
+	[data-lights="on"] {
+		--comment-fg: var(--nvim-dark-grey4);
+		--normal-bg: var(--nvim-light-grey2);
+		--normal-fg: var(--nvim-dark-grey2);
+		--normalfloat-bg: var(--nvim-light-grey1);
+		--special-fg: var(--nvim-dark-cyan);
+		--statusline-bg: var(--nvim-light-grey4);
+		--tabline-bg: var(--nvim-light-grey3);
+		--tabline-fg: var(--nvim-dark-grey3);
+		--visual-bg: var(--nvim-light-grey4);
+		/* webtui */
+		--background0: var(--normal-bg);
+		--background1: var(--normalfloat-bg);
+		--background2: var(--statusline-bg);
+		--background3: red;
+		--foreground0: var(--normal-fg);
+		--foreground1: var(--normal-fg);
+		--foreground2: var(--normal-fg);
+		--box-border-color: var(--normal-fg);
+		/* --table-border-color: */
+		/* --separator-border-color: */
+	}
+
+	a {
+		color: var(--foreground1);
+	}
+	a:hover {
+		background-color: var(--visual-bg);
+	}
+	code {
+		color: var(--special-fg);
+		font-family: inherit;
 	}
 }

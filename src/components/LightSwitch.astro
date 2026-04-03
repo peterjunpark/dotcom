@@ -1,0 +1,61 @@
+<label>
+    <span>dark</span>
+    <input id="lightswitch" type="checkbox" is-="switch" bar-="thin" aria-label="Switch to light theme"/>
+    <span>light</span>
+</label>
+
+<script is:inline>
+	const root = document.documentElement;
+	const lightswitch = document.getElementById("lightswitch");
+	const storageKey = "lights";
+
+	const getPreferredTheme = () => {
+		const saved = localStorage.getItem(storageKey);
+		if (saved === "off" || saved === "on") return saved;
+
+		return window.matchMedia("(prefers-color-scheme: dark)").matches
+			? "off"
+			: "on";
+	};
+
+	const applyTheme = (lights) => {
+		root.setAttribute("data-lights", lights);
+		localStorage.setItem(storageKey, lights);
+
+        if (!lightswitch) return;
+
+        lights === "off" ? lightswitch.removeAttribute("checked") : lightswitch.setAttribute("checked", "");
+        lightswitch.checked = lights === "on"
+        lightswitch.setAttribute(
+            "aria-label",
+            lights === "off" ? "Switch to light theme" : "Switch to dark theme",
+        );
+	};
+
+	applyTheme(getPreferredTheme());
+
+	if (lightswitch) {
+		lightswitch.addEventListener("change", () => {
+			const current = root.getAttribute("data-lights") || "off";
+			applyTheme(lightswitch.checked ? "on" : "off");
+		});
+	}
+</script>
+
+<style>
+    @import '@webtui/css/components/switch.css';
+
+    label {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        font-weight: 400;
+    }
+
+    #lightswitch {
+        --switch-track-color: var(--background2);
+    }
+    #lightswitch:hover {
+        cursor: pointer;
+    }
+</style>

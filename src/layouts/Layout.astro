@@ -1,0 +1,51 @@
+---
+import { Font } from "astro:assets";
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import StatusLine from "../components/StatusLine.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+        <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+        <Font cssVariable="--font-ubuntu-mono" />
+	</head>
+	<body>
+        <div id="viewport" box-="square">
+            <div>
+                <Header />
+                <main>
+                    <slot />
+                </main>
+            </div>
+            <StatusLine />
+        </div>
+		<Footer />
+	</body>
+</html>
+
+<style>
+    @import "@webtui/css/components/view.css";
+    @import "@webtui/css/utils/box.css";
+
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100vh;
+    }
+    #viewport {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
+    }
+    main {
+        padding-left: 3ch;
+        max-width: 100ch;
+        margin: auto;
+    }
+</style>
