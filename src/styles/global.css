@@ -27,7 +27,13 @@
 		--nvim-light-red: #ffc0b9;
 		--nvim-light-yellow: #fce094;
 		--font-family: var(--font-ubuntu-mono), monospace, "Symbols Nerd Font";
-		--font-size: 16pt;
+		--font-size: 12pt;
+        @media (min-width: 576px) {
+            --font-size: 14pt;
+        }
+        @media (min-width: 768px) {
+            --font-size: 16pt;
+        }
 		a::before {
 			content: "[";
 		}

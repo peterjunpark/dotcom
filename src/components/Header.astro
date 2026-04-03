@@ -1,47 +1,65 @@
 ---
 import { SITE_TITLE } from "../consts";
 import Ref from "./Ref.astro";
-import Xref from "./Xref.astro";
 import LightSwitch from "./LightSwitch.astro";
 ---
 
 <header>
-    <div id="social-links">
-        <h2><a href="/">{SITE_TITLE}</a></h2>
-        <a href="https://github.com/peterjunpark">󰊤<span class="sr-only">Peter's GitHub profile</span></a>
-        <a href="https://linkedin.com/in/peterjunpark">󰌻<span class="sr-only">Peter's LinkedIn profile</span></a>
-        <a href="mailto:email@peterjunpark.com">󰇮<span class="sr-only">Peter's email</span></a>
+    <div id="wordmark">
+        <h2 id="title"><a href="/">{SITE_TITLE}</a></h2>
+        <div id="socials" aria-label="Peter's social links">
+            <a href="https://github.com/peterjunpark">󰊤<span class="sr-only">Peter's GitHub profile</span></a>
+            <a href="https://linkedin.com/in/peterjunpark">󰌻<span class="sr-only">Peter's LinkedIn profile</span></a>
+            <a href="mailto:email@peterjunpark.com">󰇮<span class="sr-only">Peter's email</span></a>
+        </div>
     </div>
-    <!-- <nav class="internal-links"> -->
-    <!--     <Ref href="/">bio</Ref> -->
-    <!--     <Ref href="/blog">blog</Ref> -->
-    <!-- </nav> -->
+    <nav id="nav-wide" aria-label="Primary">
+        <Ref href="/">home</Ref>
+        <Ref href="/blog">blog</Ref>
+    </nav>
     <LightSwitch />
 </header>
 
 <style>
-    @import '@webtui/css/components/badge.css';
     header {
+        align-items: center;
         display: flex;
         justify-content: space-between;
-        padding: 0 1ch 0 1ch;
     }
-    h2>a {
+
+    #title>a {
         text-decoration: none;
     }
-    h2>a::before {
-        content: none;
-    }
-    h2>a::after {
-        content: none;
-    }
-    #social-links {
-        display: flex;
-        gap: 1ch;
-    }
-    @media (min-width: 600px) {
 
+    #title>a::before {
+        content: none;
     }
+
+    #title>a::after {
+        content: none;
+    }
+
+    #wordmark {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    @media (min-width: 768px) {
+        #wordmark {
+            flex-direction: row;
+            gap: 1ch;
+        }
+        nav {
+            flex-direction: row;
+            gap: 1ch;
+        }
+    }
+
     .sr-only {
         border: 0;
         padding: 0;
