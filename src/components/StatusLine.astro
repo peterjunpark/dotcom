@@ -1,9 +1,11 @@
 ---
-const path = "";
+const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, "");
+const subpath = pathname.match(/[^/]+/g);
+// const isActive = href === pathname || href === "/" + (subpath?.[0] || "");
 ---
 
 <div>
-    <div id="statusline">peterjunpark/{path}</div>
+    <div id="statusline">peterjunpark/{subpath?.[0]}</div>
     <div id="msgarea">-- NORMAL --</div>
 </div>
 
