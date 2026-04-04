@@ -62,8 +62,8 @@ const {
     </head>
     <body>
         <div id="viewport" box-="square">
-            <Header />
             <div id="buffer">
+                <Header />
                 <main>
                     <slot />
                 </main>
@@ -111,6 +111,7 @@ const {
     main {
         margin: 0 auto;
         max-width: 100ch;
+        padding: 0 1ch;
         width: 100%;
     }
 </style>
