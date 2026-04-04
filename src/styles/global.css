@@ -1,9 +1,8 @@
 @layer base, utils, components;
 
 @import "@webtui/css/base.css";
-@import '@webtui/css/components/switch.css';
+@import "@webtui/css/components/switch.css";
 @import "@webtui/css/components/typography.css";
-@import '@webtui/css/components/table.css';
 @import "@webtui/css/utils/box.css";
 @import "@webtui/plugin-nf";
 
@@ -32,17 +31,17 @@
 		--font-family: var(--font-ubuntu-mono), monospace, "Symbols Nerd Font";
 		--font-size: 12pt;
 
-        @media (min-width: 576px) {
-            --font-size: 14pt;
-        }
+		@media (min-width: 576px) {
+			--font-size: 14pt;
+		}
 
-        @media (min-width: 768px) {
-            --font-size: 16pt;
-        }
+		@media (min-width: 768px) {
+			--font-size: 16pt;
+		}
 
-        a {
-            text-decoration: none;
-        }
+		a {
+			text-decoration: none;
+		}
 
 		a::before {
 			content: "[";
@@ -84,13 +83,12 @@
 			padding-top: 1lh;
 		}
 
-
-        img {
-            display: block;
-            width: 100%;
-            height: auto;
-            padding-top: 1lh;
-        }
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+			padding-top: 1lh;
+		}
 	}
 
 	:root,
