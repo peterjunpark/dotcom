@@ -1,7 +1,10 @@
 @layer base, utils, components;
 
 @import "@webtui/css/base.css";
+@import '@webtui/css/components/switch.css';
 @import "@webtui/css/components/typography.css";
+@import '@webtui/css/components/table.css';
+@import "@webtui/css/utils/box.css";
 @import "@webtui/plugin-nf";
 
 @layer base {
@@ -28,42 +31,66 @@
 		--nvim-light-yellow: #fce094;
 		--font-family: var(--font-ubuntu-mono), monospace, "Symbols Nerd Font";
 		--font-size: 12pt;
+
         @media (min-width: 576px) {
             --font-size: 14pt;
         }
+
         @media (min-width: 768px) {
             --font-size: 16pt;
         }
+
+        a {
+            text-decoration: none;
+        }
+
 		a::before {
 			content: "[";
 		}
+
 		a::after {
 			content: "]";
 		}
+
 		main a:hover::after {
 			content: "](" attr(href) ")";
 		}
+
 		main h1::before {
 			content: "# ";
 		}
+
 		main h2::before {
 			content: "## ";
 		}
+
 		main h3::before {
 			content: "### ";
 		}
+
 		main h4::before {
 			content: "#### ";
 		}
+
 		main h5::before {
 			content: "##### ";
 		}
+
 		main h6::before {
 			content: "###### ";
 		}
+
 		main :is(h1, h2, h3, h4, h5, h6, p, ul) {
 			padding-top: 1lh;
 		}
+
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+            padding-top: 1lh;
+        }
 	}
 
 	:root,
@@ -116,9 +143,11 @@
 	a {
 		color: var(--foreground1);
 	}
+
 	a:hover {
 		background-color: var(--visual-bg);
 	}
+
 	code {
 		color: var(--special-fg);
 		font-family: inherit;
