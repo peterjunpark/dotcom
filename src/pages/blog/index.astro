@@ -15,7 +15,7 @@ const posts = (await getCollection("blog")).sort(
     <div id="posts-grid">
         {
             posts.map((post) => (
-                <div box-="square" class="post-card">
+                <div box-="square">
                     <a href={`/blog/${post.id}/`}>
                         <h3>{post.data.title}</h3>
                         {post.data.heroImage && (
