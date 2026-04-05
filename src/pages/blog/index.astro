@@ -10,44 +10,60 @@ const posts = (await getCollection("blog")).sort(
 ---
 
 <Base>
-    <h1>Blog</h1>
-    <p> under construction </p>
-    <div id="posts-grid">
-        {
-            posts.map((post) => (
-                <div box-="square">
-                    <a href={`/blog/${post.id}/`}>
-                        <h3>{post.data.title}</h3>
-                        {post.data.heroImage && (
-                            <Image src={post.data.heroImage} alt="" />
-                        )}
-                        <FormattedDate date={post.data.pubDate} />
-                    </a>
-                </div>
-            ))
-        }
-    </div>
+	<h1>Blog</h1>
+	<p> under construction </p>
+	<div id="posts-grid">
+		{
+			posts.map((post) => (
+				<div box-="square" class="post-card">
+					<a href={`/blog/${post.id}/`}>
+						<h3>{post.data.title}</h3>
+						{post.data.heroImage ? (
+							<Image src={post.data.heroImage} alt="" />
+						) : (
+							<div box-="square" class="placeholder"></div>
+						)}
+						<FormattedDate date={post.data.pubDate} />
+					</a>
+				</div>
+			))
+		}
+	</div>
 </Base>
 
 <style>
-    #posts-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-        padding-top: 1lh;
-    }
+	#posts-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		margin-top: 1lh;
+	}
 
-    a {
-        display: block;
-        padding: 0 1ch;
-    }
+	.post-card a {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		padding: 0 1ch;
+	}
 
-    h3 {
-        padding-top: 0;
-    }
+	a:hover {
+		color: var(--special-fg);
+	}
 
-    a::before,
-    a::after,
-    h3::before {
-        content: none;
-    }
+	h3 {
+		margin-top: 0;
+	}
+
+	a::before,
+	a::after,
+	h3::before {
+		content: none;
+	}
+
+	.placeholder {
+		display: grid;
+		place-items: center;
+		flex: 1;
+		background-color: var(--tabline-bg);
+		margin-top: 1lh;
+	}
 </style>

@@ -1,0 +1,65 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { TABLINE_LINKS } from "$consts";
+
+type Props = HTMLAttributes<"a">;
+
+const { class: className, ...props } = Astro.props;
+const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, "");
+const subpath = pathname.match(/[^/]+/g);
+---
+
+<header>
+	<nav id="nav-wide" aria-label="Primary">
+		{
+			TABLINE_LINKS.map((link) => {
+				const isActive =
+					link.href === pathname ||
+					link.href === "/" + (subpath?.[0] || "");
+
+				return (
+					<a
+						is-="badge"
+						variant-="background2"
+						href={link.href}
+						class:list={[className, { active: isActive }]}
+						{...props}
+					>
+						<span> {link.label}</span>
+					</a>
+				);
+			})
+		}
+	</nav>
+</header>
+
+<style>
+	@import "@webtui/css/components/badge.css";
+
+	header {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	a::before {
+		background-color: var(--tabline-bg);
+	}
+
+	a::after {
+		background-color: var(--tabline-bg);
+	}
+
+	a:hover,
+	a:hover::before,
+	a:hover::after {
+		box-shadow: inset 0 -2px 0 var(--special-fg);
+	}
+
+	.active,
+	.active::before,
+	.active::after {
+		box-shadow: inset 0 -2px 0 var(--normal-fg);
+		font-weight: 700;
+	}
+</style>

@@ -1,15 +1,35 @@
 ---
-const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, "");
-const subpath = pathname.match(/[^/]+/g);
+import { SITE_TITLE } from "../consts";
+
+const pathname = Astro.url.pathname;
+const segments = pathname.match(/[^/]+/g) ?? [];
+
+const breadcrumbs = segments.map((segment, index) => ({
+	label: segment,
+	href: "/" + segments.slice(0, index + 1).join("/") + "/",
+	isCurrent: segments.length < 1 || index === segments.length - 1,
+}));
 ---
 
-<div>
-    <div id="statusline">peterjunpark/{subpath?.[0]}</div>
-    <div id="msgarea">-- NORMAL --</div>
+<div aria-label="Breadcrumb">
+    {segments.length > 0
+        ? <a href="/">{SITE_TITLE}</a>
+        : <span>{SITE_TITLE}</span>
+    }{breadcrumbs.map((crumb) => (
+        <span><span>/</span>{crumb.isCurrent
+            ? (<span aria-current="page">{crumb.label}</span>)
+            : (<a href={crumb.href}>{crumb.label}</a>)
+     }</span >
+	))}
 </div>
 
 <style>
-    #statusline {
-        background-color: var(--statusline-bg);
-    }
+	div {
+		background-color: var(--statusline-bg);
+	}
+
+	a:hover {
+        text-decoration: underline;
+		text-decoration-color: var(--special-fg);
+	}
 </style>

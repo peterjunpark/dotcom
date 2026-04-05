@@ -3,3 +3,7 @@
 
 export const SITE_TITLE = "peterjunpark";
 export const SITE_DESCRIPTION = "Peter's personal website.";
+export const TABLINE_LINKS = [
+	{ href: "/", label: "home" },
+	{ href: "/blog", label: "blog" },
+];
