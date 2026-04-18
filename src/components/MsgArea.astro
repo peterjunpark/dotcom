@@ -1,1 +1,42 @@
-<div>-- NORMAL --</div>
+<div id="msgarea"></div>
+
+<script>
+  const msgarea = document.getElementById("msgarea");
+  const win = document.getElementById("window");
+
+  function isSelectionInsideWindow(selection) {
+    if (!selection || selection.isCollapsed || selection.rangeCount === 0) {
+      return false;
+    }
+
+    const anchorNode = selection.anchorNode;
+    const focusNode = selection.focusNode;
+
+    if (!anchorNode || !focusNode) {
+      return false;
+    }
+
+    return win.contains(anchorNode) && win.contains(focusNode);
+  }
+
+  function updateMode() {
+    const selection = window.getSelection();
+    const isVisual =
+      isSelectionInsideWindow(selection) &&
+      selection.toString().trim().length > 0;
+
+    msgarea.textContent = isVisual
+      ? "-- VISUAL --"
+      : "";
+  }
+
+  document.addEventListener("selectionchange", updateMode);
+  document.addEventListener("mouseup", updateMode);
+  document.addEventListener("keyup", updateMode);
+</script>
+
+<style>
+  #msgarea {
+      color: var(--okmsg-fg);
+  }
+</style>

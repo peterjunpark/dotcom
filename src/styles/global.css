@@ -70,6 +70,7 @@
 		--normal-bg: var(--nvim-dark-grey2);
 		--normal-fg: var(--nvim-light-grey2);
 		--normalfloat-bg: var(--nvim-dark-grey1);
+        --okmsg-fg: var(--nvim-light-green);
 		--special-fg: var(--nvim-light-cyan);
 		--statusline-bg: var(--nvim-dark-grey4);
 		--tabline-bg: var(--nvim-dark-grey3);
@@ -83,6 +84,7 @@
 		--normal-bg: var(--nvim-light-grey2);
 		--normal-fg: var(--nvim-dark-grey2);
 		--normalfloat-bg: var(--nvim-light-grey1);
+        --okmsg-fg: var(--nvim-dark-green);
 		--special-fg: var(--nvim-dark-cyan);
 		--statusline-bg: var(--nvim-light-grey4);
 		--tabline-bg: var(--nvim-light-grey3);
