@@ -35,7 +35,8 @@
 			"ss20" 1,
 			"cv04" 1,
 			"cv12" 1,
-			"cv15" 1;
+			"cv15" 1,
+			"cv16" 1;
 		--font-size: 12pt;
 	}
 
@@ -70,7 +71,7 @@
 		--normal-bg: var(--nvim-dark-grey2);
 		--normal-fg: var(--nvim-light-grey2);
 		--normalfloat-bg: var(--nvim-dark-grey1);
-        --okmsg-fg: var(--nvim-light-green);
+		--okmsg-fg: var(--nvim-light-green);
 		--special-fg: var(--nvim-light-cyan);
 		--statusline-bg: var(--nvim-dark-grey4);
 		--tabline-bg: var(--nvim-dark-grey3);
@@ -84,7 +85,7 @@
 		--normal-bg: var(--nvim-light-grey2);
 		--normal-fg: var(--nvim-dark-grey2);
 		--normalfloat-bg: var(--nvim-light-grey1);
-        --okmsg-fg: var(--nvim-dark-green);
+		--okmsg-fg: var(--nvim-dark-green);
 		--special-fg: var(--nvim-dark-cyan);
 		--statusline-bg: var(--nvim-light-grey4);
 		--tabline-bg: var(--nvim-light-grey3);
@@ -159,6 +160,7 @@
 
 	.astro-code,
 	.astro-code span {
+		/* biome-ignore lint: https://docs.astro.build/en/guides/syntax-highlighting/#setting-light-and-dark-mode-themes */
 		background-color: var(--normalfloat-bg) !important;
 		color: var(--shiki-theme);
 	}

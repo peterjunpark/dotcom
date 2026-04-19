@@ -1,8 +1,8 @@
 <div id="msgarea"></div>
 
 <script>
+  const buf = document.querySelector("main");
   const msgarea = document.getElementById("msgarea");
-  const win = document.getElementById("window");
 
   function isSelectionInsideWindow(selection) {
     if (!selection || selection.isCollapsed || selection.rangeCount === 0) {
@@ -16,7 +16,7 @@
       return false;
     }
 
-    return win.contains(anchorNode) && win.contains(focusNode);
+    return buf.contains(anchorNode) && buf.contains(focusNode);
   }
 
   function updateMode() {

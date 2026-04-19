@@ -6,7 +6,7 @@ const segments = pathname.match(/[^/]+/g) ?? [];
 
 const breadcrumbs = segments.map((segment, index) => ({
 	label: segment,
-	href: "/" + segments.slice(0, index + 1).join("/") + "/",
+	href: "/" + `{segments.slice(0, index + 1).join("/")}/`,
 	isCurrent: segments.length < 1 || index === segments.length - 1,
 }));
 ---
