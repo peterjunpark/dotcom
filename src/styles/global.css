@@ -37,16 +37,22 @@
 			"cv12" 1,
 			"cv15" 1,
 			"cv16" 1;
-		--font-size: 12pt;
+		--font-size: 11pt;
 	}
 
 	@media (min-width: 576px) {
 		:root {
-			--font-size: 14pt;
+			--font-size: 13pt;
 		}
 	}
 
 	@media (min-width: 768px) {
+		:root {
+			--font-size: 15pt;
+		}
+	}
+
+	@media (min-width: 1200px) {
 		:root {
 			--font-size: 16pt;
 		}

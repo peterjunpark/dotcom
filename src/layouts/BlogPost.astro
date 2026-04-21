@@ -11,7 +11,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 
 <Base title={title} description={description} image={heroImage}>
     <article>
-        {heroImage && <Image src={heroImage} alt="" />}
+    <h1>{title}</h1>
         <div id="date">
             <FormattedDate date={pubDate} />
             {
@@ -22,7 +22,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
                 )
             }
         </div>
-        <h1>{title}</h1>
+        {heroImage && <Image src={heroImage} alt="" />}
         <slot />
     </article>
 </Base>
