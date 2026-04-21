@@ -22,7 +22,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
                 )
             }
         </div>
-        {heroImage && <Image src={heroImage} alt="" />}
+        {heroImage && <Image src={heroImage} id="hero" alt="" />}
         <slot />
     </article>
 </Base>
@@ -32,7 +32,13 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
         display: flex;
         justify-content: space-between;
     }
+
     #last-updated-date {
         color: var(--comment-fg);
+    }
+
+    #hero {
+        max-height: 13lh;
+        width: auto;
     }
 </style>
