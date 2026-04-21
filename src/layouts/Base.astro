@@ -90,8 +90,6 @@ const {
     html,
     body {
         margin: 0;
-        height: 100%;
-        overflow: hidden;
     }
 
     body {
@@ -116,9 +114,20 @@ const {
         flex: 1;
         min-height: 0;
         min-width: 0;
-        overflow-y: auto;
-        overscroll-behavior: contain;
-        -webkit-overflow-scrolling: touch;
+    }
+
+    @media (min-height: 480px) {
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        main {
+            overflow-y: auto;
+            overscroll-behavior: contain;
+            -webkit-overflow-scrolling: touch;
+        }
     }
 
     #statusarea {
