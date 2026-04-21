@@ -77,7 +77,7 @@ const {
         <div id="window" box-="square">
             <TabLine />
             <main><slot /></main>
-            <div>
+            <div id="statusarea">
                 <StatusLine />
                 <MsgArea />
             </div>
@@ -119,5 +119,9 @@ const {
         overflow-y: auto;
         overscroll-behavior: contain;
         -webkit-overflow-scrolling: touch;
+    }
+
+    #statusarea {
+        margin-bottom: -0.25lh;
     }
 </style>
