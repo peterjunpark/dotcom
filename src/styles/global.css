@@ -151,6 +151,10 @@
 		content: "###### ";
 	}
 
+	small {
+		color: var(--comment-fg);
+	}
+
 	main :is(h1, h2, h3, h4, h5, h6, p, ul),
 	img,
 	.astro-code,

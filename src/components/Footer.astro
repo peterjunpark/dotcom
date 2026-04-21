@@ -6,28 +6,59 @@ const path = "";
 ---
 
 <footer>
-    <div id="socials" aria-label="Peter's social links">
+    <div id="socials-group" aria-label="Peter's social links">
         <a href="https://github.com/peterjunpark" target="_blank">󰊤<span class="sr-only">Peter's GitHub profile</span></a>
         <a href="https://linkedin.com/in/peterjunpark" target="_blank">󰌻<span class="sr-only">Peter's LinkedIn profile</span></a>
         <a href="mailto:email@peterjunpark.com">󰇮<span class="sr-only">Peter's email</span></a>
     </div>
-    <small id="copyright">󰗦 {today.getFullYear()} Peter Park.</small>
-    <small><LightSwitch /></small>
+    <small id="copyright">󰗦 {today.getFullYear()} Peter Park</small>
+    <small id="lightswitch-group"><LightSwitch /></small>
 </footer>
 
 <style>
     footer {
         align-items: center;
-        color: var(--comment-fg);
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        padding: 0 1ch;
+        gap: 1lh;
     }
 
-    @media (min-width: 768px) {
+    #socials-group {
+        order: 1;
+    }
+
+    #lightswitch-group {
+        order: 2;
+    }
+
+    #copyright {
+        order: 3;
+        width: 100%;
+        text-align: center;
+        margin-top: 0.5rem;
+    }
+
+    @media(min-width: 320px) {
         footer {
             flex-direction: row;
+            flex-wrap: wrap;
+            gap: 0;
+            justify-content: space-between;
+            padding: 0 1ch;
+        }
+    }
+
+    @media (min-width: 480px) {
+        footer {
+            flex-wrap: nowrap;
+        }
+
+        #socials-group,
+        #lightswitch-group,
+        #copyright {
+            order: initial;
+            width: auto;
+            margin-top: 0;
         }
     }
 
@@ -39,13 +70,9 @@ const path = "";
         height: 1px;
         width: 1px;
         overflow: hidden;
-        /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
         clip: rect(1px 1px 1px 1px);
-        /* maybe deprecated but we need to support legacy browsers */
         clip: rect(1px, 1px, 1px, 1px);
-        /* modern browsers, clip-path works inwards from each corner */
         clip-path: inset(50%);
-        /* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
         white-space: nowrap;
     }
 </style>
