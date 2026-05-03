@@ -43,8 +43,8 @@ export default defineConfig({
 	markdown: {
 		shikiConfig: {
 			themes: {
-				light: "ayu-light",
-				dark: "ayu-dark",
+				light: "kanagawa-lotus",
+				dark: "kanagawa-wave",
 			},
 		},
 	},
