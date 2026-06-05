@@ -29,7 +29,7 @@
 		--nvim-light-red: #ffc0b9;
 		--nvim-light-yellow: #fce094;
 
-		--font-family: var(--font-jetbrains-mono), monospace, "Symbols Nerd Font";
+		--font-family: var(--font-maple-mono), monospace, "Symbols Nerd Font";
 		font-feature-settings:
 			"ss19" 1,
 			"ss20" 1,

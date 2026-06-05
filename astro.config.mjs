@@ -11,33 +11,9 @@ export default defineConfig({
 	integrations: [mdx(), sitemap()],
 	fonts: [
 		{
-			provider: fontProviders.local(),
-			name: "JetBrainsMono",
-			cssVariable: "--font-jetbrains-mono",
-			options: {
-				variants: [
-					{
-						src: ["./src/assets/fonts/JetBrainsMono-Regular.woff2"],
-						weight: "normal",
-						style: "normal",
-					},
-					{
-						src: ["./src/assets/fonts/JetBrainsMono-Italic.woff2"],
-						weight: "normal",
-						style: "italic",
-					},
-					{
-						src: ["./src/assets/fonts/JetBrainsMono-Bold.woff2"],
-						weight: "bold",
-						style: "normal",
-					},
-					{
-						src: ["./src/assets/fonts/JetBrainsMono-BoldItalic.woff2"],
-						weight: "bold",
-						style: "italic",
-					},
-				],
-			},
+			provider: fontProviders.fontsource(),
+			name: "Maple Mono",
+			cssVariable: "--font-maple-mono",
 		},
 	],
 	markdown: {
