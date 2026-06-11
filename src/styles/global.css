@@ -41,7 +41,7 @@
 		--tabline-bg: #232720;
 		--tabline-fg: #c0c7b7;
 		--visual-bg: #363c34;
-        --crt-scanline-alpha: 0.23;
+        --crt-scanline-alpha: 0.2;
 		--shiki-theme: var(--shiki-dark);
 	}
 
@@ -56,7 +56,7 @@
 		--tabline-bg: #c9cec3;
 		--tabline-fg: #60685b;
 		--visual-bg: #b6bdae;
-        --crt-scanline-alpha: 0.07;
+        --crt-scanline-alpha: 0.05;
 		--shiki-theme: var(--shiki-light);
 	}
 
