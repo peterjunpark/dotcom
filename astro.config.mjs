@@ -12,15 +12,15 @@ export default defineConfig({
 	fonts: [
 		{
 			provider: fontProviders.fontsource(),
-			name: "Maple Mono",
-			cssVariable: "--font-maple-mono",
+			name: "IBM Plex Mono",
+			cssVariable: "--font-ibm-plex-mono",
 		},
 	],
 	markdown: {
 		shikiConfig: {
 			themes: {
-				light: "kanagawa-lotus",
-				dark: "kanagawa-wave",
+				light: "everforest-dark",
+				dark: "everforest-light",
 			},
 		},
 	},
